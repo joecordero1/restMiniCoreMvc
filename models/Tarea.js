@@ -21,12 +21,12 @@ const tareasSchema = new Schema({
     },
     Id_Empleado: {
         type: Schema.Types.ObjectId,
-        ref: 'Empleado',
+        ref: 'Empleados',
         required: true
     },
     Id_Proyecto: {
         type: Schema.Types.ObjectId,
-        ref: 'Proyecto',
+        ref: 'Proyectos',
         required: true
     }
 });

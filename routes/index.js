@@ -3,6 +3,7 @@ const router = express.Router();
 const empleadoController = require('../controllers/empleadosController');
 const proyectoController = require('../controllers/proyectosController');
 const tareaController = require('../controllers/tareasController');
+const reportesController = require('../controllers/reportesController');
 
 
 // Aquí defines las rutas de tu API.
@@ -27,6 +28,10 @@ module.exports = function() {
     router.get('/tareas/:id', tareaController.mostrarTareaPorId);
     router.put('/tareas/:id', tareaController.actualizarTarea);
     router.delete('/tareas/:id', tareaController.eliminarTarea);
+
+    // Ruta para reporte de tareas atrasadas
+    router.get('/reporte/tareas-atrasadas/:fechaInicio/:fechaFin', reportesController.reporteTareasAtrasadas);
+
 
     return router;
 }
